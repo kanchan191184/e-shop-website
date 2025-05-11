@@ -1,0 +1,58 @@
+@use "../../scss/partials/colors" as *;
+@use "../../scss/partials/mixins" as *;
+
+.flexContainer {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.leftSection {
+  flex: 1 1 45%;
+  min-width: 280px;
+
+  h3 {
+    font-size: 1.4rem;
+    @include product-card-common-style;
+  }
+
+  .variants {
+    @include product-card-common-style;
+    font-size: 1.2rem;
+    font-weight: bold;
+  }
+
+  h5 {
+    @include product-card-common-style;
+    font-size: 1.4rem;
+    font-weight: bold;
+  }
+
+  img {
+    width: 100%;
+    max-width: 300px;
+    object-fit: contain;
+  }
+}
+
+.rightSection {
+  flex: 1 1 45%;
+  min-width: 280px;
+
+  h4 {
+    margin-bottom: 1.5em;
+    color: black;
+  }
+
+  .description {
+    font-size: 1.1em;
+    color: black;
+    line-height: 1.6;
+  }
+}
+
+.buttonGroup {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+}

@@ -1,0 +1,67 @@
+@use "../../scss/partials/colors" as *;
+@use "../../scss/partials/mixins" as *;
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  width: 400px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  background-color: $background-color;
+  transition: transform 0.3s ease-in-out;
+
+  &:hover {
+    transform: scale(1.05);
+  }
+
+  img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+  }
+
+  .content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem;
+    gap: 0.5rem;
+
+    .favourite {
+      border: none;
+      background-color: transparent;
+      display: flex;
+      margin-left: auto;
+
+      i {
+        color: $secondary;
+        font-size: 24px;
+      }
+    }
+
+    h3 {
+      font-size: 1.4rem;
+      @include product-card-common-style;
+    }
+
+    .variants {
+      @include product-card-common-style;
+      font-size: 1.2rem;
+      font-weight: bold;
+    }
+
+    h5 {
+      @include product-card-common-style;
+      font-size: 1.4rem;
+      font-weight: bold;
+    }
+
+    button {
+      margin: 1em 0.5em;
+      font-weight: bold;
+    }
+  }
+}

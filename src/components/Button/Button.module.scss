@@ -1,0 +1,54 @@
+@use "../../scss/partials/colors";
+
+@mixin button-type($color, $text: black) {
+  background-color: $color;
+  color: $text;
+  &.outline {
+    background-color: transparent;
+    border: 1px solid $color;
+    color: $color;
+    &:hover {
+      background-color: $color;
+      border: transparent;
+      color: $text;
+    }
+  }
+}
+
+.btn {
+  border: none;
+  padding: 0.5rem 1rem;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 18px;
+  border-radius: 0.5em;
+  transition: 0.3s ease-in-out;
+  &:hover {
+    transform: scale(1.05);
+  }
+}
+
+.primary {
+  @include button-type(colors.$primary);
+}
+
+.secondary {
+  @include button-type(colors.$secondary);
+}
+
+.danger {
+  @include button-type(#fc2a2a);
+}
+
+.warning {
+  @include button-type(#ff8000);
+}
+
+.success {
+  @include button-type(#1cdb1c);
+}
+
+.cancel {
+  @include button-type(#b4aeae);
+}

@@ -1,0 +1,49 @@
+@use "../../scss/partials/colors" as *;
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  padding: 1.5em;
+  max-width: 100%;
+  gap: 2em;
+  width: 100%;
+  font-size: 22px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: $background-color;
+  z-index: 5;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+
+  .brandName {
+    display: flex;
+    justify-content: flex-start;
+    font-size: 26px;
+    font-weight: bold;
+  }
+
+  .linksName {
+    display: flex;
+    justify-content: right;
+    gap: 2em;
+  }
+}
+
+.link {
+  text-decoration: none;
+  color: $secondary;
+  transition: ease-in-out 0.2s;
+
+  &:visited {
+    color: $secondary;
+  }
+
+  &:hover {
+    color: $secondary;
+    transform: scale(1.05);
+  }
+}
+
+.active_link {
+  color: $secondary;
+}

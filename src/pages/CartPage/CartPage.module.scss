@@ -1,0 +1,9 @@
+@use "../../scss/partials/mixins" as *;
+
+.cartContainer {
+  margin-top: 100px;
+}
+
+.cartHeading {
+  @include page-heading-common-style;
+}

@@ -1,0 +1,12 @@
+@use "../../scss/partials/colors" as *;
+
+.captionHeading {
+  font-size: 2em;
+  color: $secondary;
+  font-weight: bold;
+}
+.captionText {
+  font-size: 1.9em;
+  color: $secondary;
+  margin-top: 0.5em;
+}

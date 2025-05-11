@@ -1,0 +1,25 @@
+@use "../partials/colors" as *;
+
+@mixin page-heading-common-style {
+  font-size: 2rem;
+  font-weight: bold;
+  margin: 2.5rem 0;
+  text-align: center;
+  color: $heading-text-color;
+  width: 100%;
+  padding-bottom: 1em;
+  border-bottom: 1px solid $heading-border-color;
+}
+
+@mixin page-container-common-style {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+}
+
+@mixin product-card-common-style {
+  color: $heading-text-color;
+  width: 100%;
+  margin: 1em 0;
+}
