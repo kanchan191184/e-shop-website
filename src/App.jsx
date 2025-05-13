@@ -34,6 +34,8 @@ function App() {
               path="/featured-products/:brand"
               element={<FeaturedPage />}
             />
+            <Route path="/success" element={<h2>Payment Successful!</h2>} />
+            <Route path="/cancel" element={<h2>Payment Cancelled</h2>} />
           </Routes>
         </CartProvider>
       </BrowserRouter>

@@ -3,7 +3,7 @@ import Button from "../Button/Button";
 import { useState } from "react";
 import { useCart } from "../../context/CartContext";
 import { useNavigate } from "react-router-dom";
-import ToastNotification from "../ToastNotification/ToastNotification";
+import { toast } from "react-toastify";
 import { updateProductFavouriteStatus } from "../../services/product-services";
 
 const ProductCard = ({ product = {}, refetchFavouriteProducts }) => {
@@ -16,16 +16,12 @@ const ProductCard = ({ product = {}, refetchFavouriteProducts }) => {
 
   const [isFavourite, setIsFavourite] = useState(product.favourite);
 
-  const { showToast: showAddToCartToast } = ToastNotification({
-    message: `${product.name} (${selectedVariant}) added to cart`,
-    type: "success",
-  });
-
-  const { showToast } = ToastNotification({});
-
   const handleAddToCart = () => {
     addToCart(product, selectedVariant);
-    showAddToCartToast();
+    toast.success(`${product.name} (${selectedVariant}) added to cart!`, {
+      position: "top-center",
+      autoClose: 1000,
+    });
   };
 
   const handleMoreInfo = () => {
@@ -60,7 +56,7 @@ const ProductCard = ({ product = {}, refetchFavouriteProducts }) => {
         ? `${product.name} added to favourites!`
         : `${product.name} removed from favourites.`;
 
-      showToast({ message: toastMessage, type: "success" });
+      toast.success(toastMessage, { position: "top-center", autoClose: 1000 });
 
       if (!newFavouriteStatus && refetchFavouriteProducts) {
         refetchFavouriteProducts();

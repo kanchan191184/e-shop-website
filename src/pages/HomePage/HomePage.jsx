@@ -1,4 +1,3 @@
-import React from "react";
 import CarouselBanner from "../../components/CarouselBanner/CarouselBanner";
 import ProductPage from "../ProductPage/ProductPage";
 import classes from "./HomePage.module.scss";

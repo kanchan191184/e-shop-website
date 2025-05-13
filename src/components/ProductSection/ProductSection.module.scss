@@ -1,0 +1,13 @@
+@use "../../scss/partials/mixins" as *;
+
+.sectionContainer {
+  @include page-container-common-style;
+}
+
+.withMarginTop {
+  margin-top: 100px;
+}
+
+.heading {
+  @include page-heading-common-style;
+}

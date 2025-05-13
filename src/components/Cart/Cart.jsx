@@ -1,5 +1,10 @@
 import classes from "./Cart.module.scss";
 import Button from "../Button/Button";
+import { loadStripe } from "@stripe/stripe-js";
+
+const stripePromise = loadStripe(
+  "pk_test_51RMr3YQWrAcdTLcLYITpM8U25t43sQ6KtoNX1My26HbjaOMvh26TDNZtx8tvo9MvZz4NxZrf2fbmQ5VS8ynlXrfq009QMMJ0Gn"
+);
 
 const Cart = ({
   cartItems,
@@ -22,6 +27,24 @@ const Cart = ({
       sum + (product?.quantityAdded || 0) * (product?.pricePerUnit || 0),
     0
   );
+
+  const handleCheckout = async () => {
+    const stripe = await stripePromise;
+
+    const response = await fetch(
+      "http://localhost:4242/create-checkout-session",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ cartItems }),
+      }
+    );
+
+    const session = await response.json();
+    await stripe.redirectToCheckout({ sessionId: session.id });
+  };
 
   if (cartItems.length === 0) {
     return (
@@ -103,7 +126,7 @@ const Cart = ({
           <p>
             Total Amount: <span>${totalPrice.toFixed(2)}</span>
           </p>
-          <Button type="button" variants={["primary"]}>
+          <Button type="button" onClick={handleCheckout} variants={["primary"]}>
             Checkout
           </Button>
         </aside>
