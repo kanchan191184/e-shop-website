@@ -18,7 +18,7 @@ app.post("/create-checkout-session", async (req, res) => {
 
   const line_items = cartItems.map((item) => ({
     price_data: {
-      currency: "usd",
+      currency: "aud",
       product_data: {
         name: item.name,
       },
@@ -32,8 +32,8 @@ app.post("/create-checkout-session", async (req, res) => {
       payment_method_types: ["card"],
       line_items,
       mode: "payment",
-      success_url: "http://localhost:3000/success",
-      cancel_url: "http://localhost:3000/cancel",
+      success_url: "http://localhost:5173/",
+      cancel_url: "http://localhost:5173/",
     });
 
     res.json({ id: session.id });

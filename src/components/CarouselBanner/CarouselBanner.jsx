@@ -12,6 +12,8 @@ const CarouselBanner = () => {
       <div
         id="carouselExampleCaptions"
         className="carousel slide pointer-event"
+        data-bs-ride="carousel"
+        data-bs-interval="2000"
       >
         <div className="carousel-indicators">
           <button
