@@ -14,7 +14,7 @@ import ProductDetailsPage from "./pages/ProductDetailsPage/ProductDetailsPage";
 function App() {
   return (
     <>
-      <BrowserRouter>
+      <BrowserRouter basename="/e-shop-website">
         <CartProvider>
           <ToastContainer />
           <NavBar />
