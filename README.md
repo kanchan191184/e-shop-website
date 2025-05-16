@@ -1,15 +1,43 @@
-# React + Vite
+## Build Steps
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+1. **Clone the repository**: Clone the repository using the following command: `git clone https://
 
-Currently, two official plugins are available:
+2. **Install dependecies**:
+   npm install
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+3. **FireBase configuration**
 
-## Expanding the ESLint configuration
+- This project uses Firebase for backend services. To run this project locally, you'll need to set up your own Firebase project and add the configuration to a
+  `.env` file. Follow these steps:
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+  - Create a `.env` file in the root directory of the project.
+  - Add the following configuration to the `.env` file:
+    ```
+    VITE_FIREBASE_API_KEY=your_firebase_api_key
+    ```
+  - Replace `your_firebase_api_key` with your actual Firebase API key.
+
+  - Alternatively, You can copy the code from `.env-sample` file in the root directory of the project and replace with your actual Firebase API key.
+
+4. **Start the Client**: It will run on localhost: 5173 . Start the application using the following command:
+   npm run dev
+
+5. **Set up Stripe Payment API keys**: SIgn up for the Stripe Accoutn and get your API Keys.
+
+- Add your Stripe API keys to the .env file in the server folder of the project.
+- Add the code mentioned below in .env file.
+  STRIPE_SECRET_KEY= `Your Stripe secret Key`
+- Replace `Your Stripe secret Key` with your actual Stripe secret key.
+
+6. **Start the Server**: Start the server in different terminal and keep it running. It will run on localhost port 4242
+
+   cd server
+   node server.js
+
+7. **Open the browser**: Open the browser and navigate to
+   `http://localhost:5173/`
+
+## Requirements/Purpose of Project
 
 # React e-cShop Website
 

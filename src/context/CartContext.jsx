@@ -8,6 +8,7 @@ export default function CartProvider({ children }) {
   // Function to add a product to the cart
   const addToCart = (product, selectedVariant) => {
     // Check if the product already exists in the cart based on its ID
+
     // Access product.id directly from the incoming product object
     const existingProductIndex = cart.findIndex(
       (item) =>
